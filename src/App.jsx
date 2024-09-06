@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./App.css";
 import ConferenceEvent from "./ConferenceEvent";
 import AboutUs from "./AboutUs";
-import ResponsiveLayout from "./ResponsiveLayout";
 
 function App() {
   const [showVenue, setShowVenue] = useState(false);
@@ -14,23 +13,31 @@ function App() {
   return (
     <>
       <header className="first_page">
-        <div className="main_event">
-          <div className="first_page_name_btn">
-            <h1 className="budget_heading">Conference Expense Planner</h1>
-            <p className="budget_sentence"> Plan your next major event with us!</p>
-            <div className="getstarted_btn">
-              <button onClick={() => handleGetStarted()} className="get-started-btn">
+        <div className="container">
+          <div className="row justify-content-center text-center">
+            <div className="col-12">
+              <h1 className="budget_heading">Conference Expense Planner</h1>
+              <p className="budget_sentence">
+                Plan your next major event with us!
+              </p>
+            </div>
+            <div className="col-12">
+              <button
+                onClick={() => handleGetStarted()}
+                className="btn btn-primary get-started-btn"
+              >
                 Get Started
               </button>
             </div>
           </div>
-          <div className="aboutus_main">
-            <AboutUs />
+
+          <div className="row justify-content-center mt-5">
+            <div className="col-12">
+              <AboutUs />
+            </div>
           </div>
         </div>
       </header>
-
-      <ResponsiveLayout />
 
       <div className={`event-list-container ${showVenue ? 'visible' : ''}`}>
         <ConferenceEvent />
