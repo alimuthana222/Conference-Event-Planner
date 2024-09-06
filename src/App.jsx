@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import ConferenceEvent from "./ConferenceEvent";
 import AboutUs from "./AboutUs";
+import ResponsiveLayout from "./ResponsiveLayout";
 
 function App() {
   const [showVenue, setShowVenue] = useState(false);
@@ -28,6 +29,8 @@ function App() {
           </div>
         </div>
       </header>
+
+      <ResponsiveLayout />
 
       <div className={`event-list-container ${showVenue ? 'visible' : ''}`}>
         <ConferenceEvent />
